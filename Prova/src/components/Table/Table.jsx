@@ -1,67 +1,69 @@
-import  { useEffect, useState } from "react";
-import BootstrapTable from "react-bootstrap-table-next";
-import axios from "axios";
-import paginationFactory from "react-bootstrap-table2-paginator";
+import React, { useEffect, useState } from "react";
+import { Table as AntTable } from "antd";
+import "./Table.css";
+import { columns } from "../../data/data";
+import { getTableInfo } from "./TableFunctionalities/populateTable";
 
-
-const Table = () => {
+const CustomTable = ({ selectedVatNumber }) => {
+  const [totalPages, setTotalPages] = useState(1);
+  const [loading, setLoading] = useState(false);
   const [data, setData] = useState([]);
+  const [paginatedData, setPaginatedData] = useState([]);
 
-  useEffect(() => {
-    getData();
-  }, []);
-
-  const getData = () => {
-    axios
-      .get("https://jsonplaceholder.typicode.com/comments")
-      .then((res) => {
-        if (Array.isArray(res.data)) {
-          console.log(res.data);
-          console.log(BootstrapTable.VERSION); 
-          setData(res.data);
-        } else {
-          console.error("Data received is not an array:", res.data);
-        }
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
+  // Fetch all data initially
+  const fetchData = async (id) => {
+    setLoading(true);
+    try {
+      const newData = await getTableInfo(id);
+      setData([...newData]);
+      setPaginatedData([...newData]); // Set paginated data initially with all fetched data
+      setLoading(false);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      setLoading(false);
+    }
   };
 
-  const columns = [
-    {
-      dataField: "email",
-      text: "Email",
-      sort: true,
-    },
-    {
-      dataField: "postId",
-      text: "Product ID",
-      sort: true,
-    },
-    {
-      dataField: "name",
-      text: "Name",
-      editor: {
-        type: "text", 
-      },
-    },
-  ];
+  useEffect(() => {
+    console.log("Selected VAT Number in Table:", selectedVatNumber);
+    fetchData(selectedVatNumber);
+  }, [selectedVatNumber]);
+
+  // Handle pagination change
+  const handlePageChange = (page) => {
+    // Calculate the starting index and ending index of data for the selected page
+    const startIndex = (page - 1) * 10;
+    const endIndex = page * 10;
+    const slicedData = data.slice(startIndex, endIndex);
+    setPaginatedData([...slicedData]); // Update paginated data based on the selected page
+  };
 
   return (
     <div className="grid-two-item grid-common grid-c4">
       <div className="grid-c-title">
-        <h3 className="grid-c-title-text">Clients Info</h3>
+        <h3 className="grid-c-title-text">To-Do List</h3>
       </div>
-        {/* <BootstrapTable
-          keyField="id"
-          data={data} // Pass fetched data here
-          columns={columns} // Pass columns definition here
-          pagination={paginationFactory()} // Enable pagination if needed
-        /> */}
-  
+      <div
+        className="table-wrapper"
+        style={{
+          maxHeight: "500px",
+          overflowY: "scroll",
+          backgroundColor: "transparent",
+        }}
+      >
+        <AntTable
+          loading={loading}
+          columns={columns}
+          dataSource={paginatedData} // Render paginated data
+          pagination={{
+            pageSize: 10,
+            total: data.length, // Total length of fetched data
+            onChange: handlePageChange,
+          }}
+        ></AntTable>
+      </div>
     </div>
   );
 };
 
-export default Table;
+export default CustomTable;

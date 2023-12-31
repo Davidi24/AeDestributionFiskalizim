@@ -1,14 +1,13 @@
 import "./ContentMain.css";
 import Cards from "../Cards/Cards";
-import Transactions from "../Transactions/Transactions";
-import Report from "../Report/Report";
-import Subscriptions from "../Subscriptions/Subscriptions";
-import Savings from "../Savings/Savings";
-import Loans from "../Loans/Loans";
-import Financial from "../Financial/Financial";
-import Table  from "../Table/Table";
+import Table from "../Table/Table";
 
-const ContentMain = () => {
+const ContentMain = ({selectedVatNumber}) => {
+
+  const print = () => {
+    console.log(selectedVatNumber)
+
+  };
   return (
     <div className="main-content-holder">
         <div className="content-grid-one">
@@ -16,7 +15,7 @@ const ContentMain = () => {
 
         </div>
         <div className="content-grid-two">
-            <Table />
+            <Table selectedVatNumber={selectedVatNumber}/>
             <div className="grid-two-item">
               <div className="subgrid-two">
 

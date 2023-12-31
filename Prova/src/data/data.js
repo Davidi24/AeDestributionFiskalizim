@@ -4,13 +4,13 @@ import { personsImgs } from "../utils/images";
 export const navigationLinks = [
     { id: 1, title: 'Home', image: iconsImgs.home },
     { id: 2, title: 'Clients', image: iconsImgs.budget },
-    { id: 3, title: 'Transactions', image: iconsImgs.plane },
-    { id: 4, title: 'Subscriptions', image: iconsImgs.wallet },
-    { id: 5, title: 'Loans', image: iconsImgs.bills },
-    { id: 6, title: 'Reports', image: iconsImgs.report },
-    { id: 7, title: 'Savings', image: iconsImgs.wallet },
-    { id: 8, title: 'Financial Advice', image: iconsImgs.wealth },
-    { id: 9, title: 'Account', image: iconsImgs.user },
+    { id: 3, title: 'Prova', image: iconsImgs.plane },
+    { id: 4, title: 'Prova', image: iconsImgs.wallet },
+    { id: 5, title: 'Prova', image: iconsImgs.bills },
+    { id: 6, title: 'Prova', image: iconsImgs.report },
+    { id: 7, title: 'Prova', image: iconsImgs.wallet },
+    { id: 8, title: 'Prova', image: iconsImgs.wealth },
+    { id: 9, title: 'Prova', image: iconsImgs.user },
     { id: 10, title: 'Settings', image: iconsImgs.gears }
 ];
 
@@ -137,97 +137,83 @@ export const savings = [
 ]
 
 
-export const columns = [
-    {
-      dataField: "id",
-      text: "ID",
-      sort: true,
-      csvExport: false,
-      headerStyle: { backgroundColor: '#f2f2f2' },
-    },
-    {
-      dataField: "request",
-      text: "Request",
-      sort: true,
-      editor: {
-        type: "text",
-      },
-    },
-    {
-      dataField: "response",
-      text: "Response",
-      sort: true,
-      editor: {
-        type: "text",
-      },
-    },
-    {
-      dataField: "type",
-      text: "Type",
-      sort: true,
-    },
-    {
-      dataField: "vatnumber",
-      text: "VAT Number",
-      sort: true,
-    },
-    {
-      dataField: "businessunit",
-      text: "Business Unit",
-      sort: true,
-    },
-    {
-      dataField: "tcr",
-      text: "TCR",
-      sort: true,
-    },
-    {
-      dataField: "aedid",
-      text: "AED ID",
-      sort: true,
-    },
-    {
-      dataField: "createdat",
-      text: "Created At",
-      sort: true,
-    },
-    {
-      dataField: "status",
-      text: "Status",
-      sort: true,
-    },
-    {
-      dataField: "lastretry",
-      text: "Last Retry",
-      sort: true,
-    },
-    {
-      dataField: "retrynr",
-      text: "Retry Number",
-      sort: true,
-    },
-    {
-      dataField: "extrafields",
-      text: "Extra Fields",
-      sort: true,
-    },
-  ];
-  
-
-  export const mockedData = [
-    {
-      id: 1,
-      request: "Sample request data",
-      response: "Sample response data",
-      type: 1,
-      vatnumber: "ABC12345",
-      businessunit: "Sample business unit",
-      tcr: "Sample TCR",
-      aedid: "Sample AED ID",
-      createdat: "2023-12-31",
-      status: 1,
-      lastretry: "2023-12-31",
-      retrynr: 3,
-      extrafields: "Sample extra fields",
-    }
-  ];
+export  const columns = [
+  {
+    dataIndex: "id",
+    title: "ID",
+    sort: true,
+    // Other properties...
+  },
+  {
+    dataIndex: "request",
+    title: "Request",
+    sort: true,
+    // Other properties...
+  },
+  {
+    dataIndex: "response",
+    title: "Response",
+    sort: true,
+    // Other properties...
+  },
+  {
+    dataIndex: "type",
+    title: "Type",
+    sort: true,
+    // Other properties...
+  },
+  {
+    dataIndex: "vatNumber",
+    title: "VAT Number",
+    sort: true,
+    // Other properties...
+  },
+  {
+    dataIndex: "businessUnit",
+    title: "Business Unit",
+    sort: true,
+    // Other properties...
+  },
+  {
+    dataIndex: "tcr",
+    title: "TCR",
+    sort: true,
+    // Other properties...
+  },
+  {
+    dataIndex: "aedId",
+    title: "AED ID",
+    sort: true,
+    // Other properties...
+  },
+  {
+    dataIndex: "createdAt",
+    title: "Created At",
+    sort: true,
+    // Other properties...
+  },
+  {
+    dataIndex: "status",
+    title: "Status",
+    sort: true,
+    // Other properties...
+  },
+  {
+    dataIndex: "lastRetry",
+    title: "Last Retry",
+    sort: true,
+    // Other properties...
+  },
+  {
+    dataIndex: "retryNumber",
+    title: "Retry Number",
+    sort: true,
+    // Other properties...
+  },
+  {
+    dataIndex: "extraFields",
+    title: "Extra Fields",
+    sort: true,
+    // Other properties...
+  },
+];

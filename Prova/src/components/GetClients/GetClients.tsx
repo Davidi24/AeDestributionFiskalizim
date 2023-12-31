@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import api from "../../api/axiousConfig";
 
-let ClientId = "";
-const GetClients = () => {
+const GetClients = ({ handleLiClick }: { handleLiClick: Function }) => {
   const [clientsVatNumbers, setClientsVatNumbers] = useState<string[]>([]);
 
   useEffect(() => {
@@ -10,11 +9,9 @@ const GetClients = () => {
       try {
         const response = await api.get("getVatnumbers");
         if (response.status === 200) {
-          const vatNumbers = response.data;
+          const vatNumbers = response.data as string[];
           if (Array.isArray(vatNumbers)) {
             setClientsVatNumbers(vatNumbers);
-          } else if (typeof vatNumbers === "string") {
-            setClientsVatNumbers([vatNumbers]);
           } else {
             console.error("VAT numbers format not recognized");
           }
@@ -27,15 +24,7 @@ const GetClients = () => {
     };
 
     fetchClientsData();
-  }, []);
-
-  useEffect(() => {
-    console.log("Length of clientsVatNumbers:", clientsVatNumbers.length);
-  }, [clientsVatNumbers]);
-
-  const handleLiClick = (index: number, value: string) => {
-    console.log(`Clicked LI at index ${index} with value: ${value}`);
-  };
+  }, [handleLiClick]);
 
   return (
     <div>
@@ -49,13 +38,5 @@ const GetClients = () => {
     </div>
   );
 };
-
-export function getId() {
-  return ClientId;
-}
-
-function setID(id){
-  ClientId = id;
-}
 
 export default GetClients;

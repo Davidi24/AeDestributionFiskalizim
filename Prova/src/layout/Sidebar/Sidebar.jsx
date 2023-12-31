@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { SidebarContext } from "../../context/sidebarContext";
 import GetClients from "../../components/GetClients/GetClients";
 
-const Sidebar = () => {
+const Sidebar = ({ handleLiClick }) => {
   const [activeLinkIdx, setActiveLinkIdx] = useState(1);
   const [sidebarClass, setSidebarClass] = useState("");
   const { isSidebarOpen } = useContext(SidebarContext);
@@ -61,7 +61,9 @@ const Sidebar = () => {
               {selectedItemId === 2 && clickedLinkId === navigationLink.id && (
                 <div className="additional-content">
                   <p>Searchiii</p>
-                  <GetClients></GetClients>
+                  <GetClients
+            handleLiClick={handleLiClick}
+          />
                 </div>
               )}
             </li>
