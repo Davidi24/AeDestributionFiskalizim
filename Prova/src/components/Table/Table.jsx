@@ -5,27 +5,56 @@ import { columns } from "../../data/data";
 import { getTableInfo } from "./TableFunctionalities/populateTable";
 import TextField from "@mui/material/TextField";
 
-const CustomTable = ({ selectedVatNumber }) => {
+const CustomTable = ({ selectedVatNumber, startDate, endDate }) => {
   const [totalPages, setTotalPages] = useState(1);
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState([]);
   const [paginatedData, setPaginatedData] = useState([]);
-  const [searchValue, setSearchValue] = useState(""); 
+  const [searchValue, setSearchValue] = useState("");
+  const [originalData, setOriginalData] = useState([]);
+  const [fetching, setFetching] = useState(true);
 
-  // Fetch all data initially
   const fetchData = async (id) => {
     setLoading(true);
     try {
       const newData = await getTableInfo(id);
+      setOriginalData([...newData]);
       setData([...newData]);
       setPaginatedData([...newData]);
-    setTotalPages(newData.length)
+      setTotalPages(newData.length);
       setLoading(false);
     } catch (error) {
       console.error("Error fetching data:", error);
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    const filterDataByDate = () => {
+      if (!startDate && !endDate) {
+        setPaginatedData([...originalData]);
+        setTotalPages(originalData.length);
+        return;
+      }
+
+      const filteredData = originalData.filter((item) => {
+        const createdAt = new Date(item.createdAt); // Convert to timestamp
+        const startTimestamp = new Date(startDate);
+        const endTimestamp = new Date(endDate);
+
+        if (!isNaN(createdAt)) {
+          return createdAt >= startTimestamp && createdAt <= endTimestamp;
+        }
+
+        return true;
+      });
+
+      setPaginatedData([...filteredData]);
+      setTotalPages(filteredData.length);
+    };
+
+    filterDataByDate();
+  }, [startDate, endDate, originalData]);
 
   useEffect(() => {
     fetchData(selectedVatNumber);
@@ -42,8 +71,7 @@ const CustomTable = ({ selectedVatNumber }) => {
   const handleSearchInputChange = (event) => {
     const { value } = event.target;
     setSearchValue(value);
-  
-    // Filter data based on the search input value
+
     const filteredData = value
       ? data.filter((item) =>
           Object.values(item).some(
@@ -51,8 +79,8 @@ const CustomTable = ({ selectedVatNumber }) => {
               val && val.toString().toLowerCase().includes(value.toLowerCase())
           )
         )
-      : [...data]; // If the search value is empty, revert to the original data
-  
+      : [...data]; 
+
     setPaginatedData([...filteredData]);
     setTotalPages(filteredData.length);
   };
@@ -62,21 +90,18 @@ const CustomTable = ({ selectedVatNumber }) => {
       <div className="grid-c-title">
         <h3 className="grid-c-title-text">To-Do List</h3>
         <div>
-        <TextField
-     value={searchValue}
-     onChange={handleSearchInputChange}
-     label="Searchi"
-     variant="outlined"
-     fullWidth
-      // You can add more props for validation, styling, etc.
-    />
+          <TextField
+            value={searchValue}
+            onChange={handleSearchInputChange}
+            label="Searchi"
+            variant="outlined"
+            fullWidth
+            // You can add more props for validation, styling, etc.
+          />
+        </div>
       </div>
-      </div>
-     
 
-      <div
-        className="table-wrapper"
-      >
+      <div className="table-wrapper">
         <AntTable
           loading={loading}
           columns={columns}

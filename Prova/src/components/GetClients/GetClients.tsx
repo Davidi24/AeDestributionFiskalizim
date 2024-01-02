@@ -30,7 +30,7 @@ const GetClients = ({ handleLiClick }: { handleLiClick: Function }) => {
     <div>
       <ul>
         {clientsVatNumbers.map((vatNumber, index) => (
-          <li key={index} onClick={() => handleLiClick(index, vatNumber)}>
+          <li key={index} onClick={() => handleLiClick(vatNumber)}>
             {vatNumber}
           </li>
         ))}

@@ -5,32 +5,44 @@ import React, { useState, useEffect } from "react";
 
 function App() {
   const [selectedVatNumber, setSelectedVatNumber] = useState();
-  const handleLiClick = (index, selectedVatNumber) => {
+  const handleLiClick = (selectedVatNumber) => {
     setSelectedVatNumber(selectedVatNumber);
+    setStartDate(null);
+    setEndDate(null);
   };
 
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
 
-  const handleFilter = () => {
-    const start = startDate ? startDate.toLocaleDateString() : "-1 -1 -1";
-    const end = endDate ? endDate.toLocaleDateString() : "-1 -1 -1";
-    console.log(start, end);
+  const handleFilter = (startDate, endDate) => {
+    const start = startDate ? startDate.toLocaleDateString() : null;
+    const end = endDate ? endDate.toLocaleDateString() : null;
+    setStartDate(start);
+    setEndDate(end);
   };
-
   const handleClear = () => {
     setStartDate(null);
     setEndDate(null);
   };
 
+  const [pageSelected, setPageSelected] = useState(1);
+
+  const handlePageChange = (pageSelected) => {
+     setPageSelected(pageSelected);
+     console.log(pageSelected)
+  };
+
   return (
     <>
       <div className="app">
-        <Sidebar handleLiClick={handleLiClick} />
+        <Sidebar handleLiClick={handleLiClick}  handlePageChange={handlePageChange} />
         <Content
           selectedVatNumber={selectedVatNumber}
           handleFilter={handleFilter}
           handleClear={handleClear}
+          startDate={startDate}
+          endDate={endDate}
+          pageSelected={pageSelected}
         />
       </div>
     </>

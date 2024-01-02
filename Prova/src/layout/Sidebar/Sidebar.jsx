@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { SidebarContext } from "../../context/sidebarContext";
 import GetClients from "../../components/GetClients/GetClients";
 
-const Sidebar = ({ handleLiClick }) => {
+const Sidebar = ({ handleLiClick , handlePageChange}) => {
   const [activeLinkIdx, setActiveLinkIdx] = useState(1);
   const [sidebarClass, setSidebarClass] = useState("");
   const { isSidebarOpen } = useContext(SidebarContext);
@@ -15,7 +15,8 @@ const Sidebar = ({ handleLiClick }) => {
 
   const handleItemClick = (navigationLink) => {
     setActiveLinkIdx(navigationLink.id);
-    setClickedLinkId(navigationLink.id); // Update clicked link ID
+    setClickedLinkId(navigationLink.id); 
+    handlePageChange(navigationLink.id);
     if (navigationLink.id === 2) {
       setSelectedItemId(navigationLink.id);
     } else {

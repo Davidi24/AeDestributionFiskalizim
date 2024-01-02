@@ -138,12 +138,12 @@ export const savings = [
 
 
 export  const columns = [
-  {
-    dataIndex: "id",
-    title: "ID",
-    sort: true,
-    // Other properties...
-  },
+  // {
+  //   dataIndex: "id",
+  //   title: "ID",
+  //   sort: true,
+  //   // Other properties...
+  // },
   {
     dataIndex: "request",
     title: "Request",

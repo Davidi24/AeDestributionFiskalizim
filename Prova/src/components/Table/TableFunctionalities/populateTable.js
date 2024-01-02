@@ -11,6 +11,7 @@ export async function getTableInfo(id) {
 
 async function retriveDataFromServer(id) {
   try {
+
     const response = await api.get(`getFaturat?vatNumber=${id}`);
     if (response.status !== 200) {
       throw new Error("Failed to fetch data");
