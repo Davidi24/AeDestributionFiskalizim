@@ -23,13 +23,11 @@ export default defineConfig({
         // Add necessary PostCSS plugins
       ],
     },
+    modules: true, // Enable CSS modules
   },
   resolve: {
     alias: {
       // Add Bootstrap aliases if needed
     },
-  },
-    css: {
-    modules: true, // Enable CSS modules
   },
 });

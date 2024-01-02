@@ -61,3 +61,20 @@
     grid-column-end: 3;
   }
 }
+
+/* Add this CSS to style the calendar icon and position it */
+.date-picker-container {
+  position: relative;
+}
+
+.calendar-icon {
+  position: absolute;
+  left: 10px; /* Adjust the position of the icon */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%);
+}
+
+/* Style the input field as needed */
+.date-picker-input {
+  padding-left: 36px; /* Ensure input text doesn't overlap with the icon */
+}

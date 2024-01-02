@@ -30,9 +30,10 @@
 
 .ant-table {
   background-color: transparent !important;
-  border: solid 2px wheat;
+  /* border: solid 2px wheat; */
   /* overflow-x: scroll; */
-  border-radius: 0 20px 0 0
+  border-radius: 0 20px 0 0;
+  width: 200%;
   
  
 }
@@ -76,4 +77,10 @@ body {
     font-size: 14px !important;
     min-width: 120px;
 }
+}
+
+.table-wrapper{
+  max-width: 1000px;
+    border: solid 2px wheat;
+    border-radius: 20px 20px 0 0;
 }
