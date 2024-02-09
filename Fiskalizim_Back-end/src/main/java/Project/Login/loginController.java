@@ -16,23 +16,23 @@ public class loginController {
     }
 
     @GetMapping("/check-credentials")
-    public ResponseEntity<String> checkUserCredentials(@RequestBody User user) {
-
-        String username = user.getUsername();
-        String password = user.getPassword();
+    public ResponseEntity<String> checkUserCredentials(
+            @RequestParam String username,
+            @RequestParam String password
+    ) {
         String validationMessage;
-        try{
+        try {
             validationMessage = loginService.validateUserCredentials(username, password);
-        }catch(Exception e){
+        } catch (Exception e) {
             return ResponseEntity.status(500).body(e.getMessage());
         }
 
-
         if (validationMessage.equals("Credentials are valid!")) {
-            return ResponseEntity.ok(validationMessage);
+            return ResponseEntity.ok().body("{\"message\": \"Credentials are valid!\"}");
         } else {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(validationMessage);
+            return ResponseEntity.status(401).body("{\"message\": \"" + validationMessage + "\"}");
         }
+
     }
 
 

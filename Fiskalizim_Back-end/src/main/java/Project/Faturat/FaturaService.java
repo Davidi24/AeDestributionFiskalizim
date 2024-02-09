@@ -1,22 +1,21 @@
 package Project.Faturat;
 
-
+import Project.Faturat.Fatura;
+import Project.Faturat.FaturaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
+import java.util.Optional;
 
 @Service
 public class FaturaService {
 
-    private final FaturaRepository faturaRepository;
     @Autowired
-    public FaturaService(FaturaRepository faturaRepository) {
-        this.faturaRepository = faturaRepository;
-    }
+    private FaturaRepository faturaRepository;
 
-    public List<Fatura> getAllFaturat(String vatnumber){
-        List<Fatura> clients = faturaRepository.findByvatNumber(vatnumber);
-        return clients;
+    public Page<Fatura> getFaturat(String vatNumber, int page, int size) {
+        PageRequest pageRequest = PageRequest.of(page, size);
+        return faturaRepository.findByVatNumber(vatNumber, pageRequest);
     }
 }

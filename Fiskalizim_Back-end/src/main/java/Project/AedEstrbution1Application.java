@@ -13,7 +13,7 @@ public class AedEstrbution1Application {
 
 	public static void main(String[] args) {
 		SpringApplication.run(AedEstrbution1Application.class, args);
-		System.out.println("nishi");
+		System.out.println("System started sucessfuly");
 
 	}
 

@@ -30,7 +30,7 @@ public class ClientController {
             String clientsJson = objectMapper.writeValueAsString(clients);
             return ResponseEntity.status(HttpStatus.OK).body(clientsJson);
         } catch (JsonProcessingException e) {
-            e.printStackTrace(); // Handle the exception based on your needs
+            e.printStackTrace();
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error converting to JSON");
         }
     }
