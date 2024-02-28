@@ -129,6 +129,23 @@ public class User {
         return idcompanyOffice;
     }
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", idcompany=" + idcompany +
+                ", idcontact=" + idcontact +
+                ", resetpassword=" + resetpassword +
+                ", active=" + active +
+                ", role='" + role + '\'' +
+                ", idcompanyOffice=" + idcompanyOffice +
+                ", isCompanyClient=" + isCompanyClient +
+                ", extrafields='" + extrafields + '\'' +
+                '}';
+    }
+
     public void setIdcompanyOffice(int idcompany_office) {
         this.idcompanyOffice = idcompany_office;
     }

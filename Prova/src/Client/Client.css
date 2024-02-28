@@ -1,0 +1,39 @@
+.wraper{
+  width: 100%;
+}
+
+.sidebar-wrapper {
+  position: fixed;
+}
+
+.content{
+  margin-left: 250px;
+}
+
+
+.sideBarOpen {
+  transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+  margin-left: 17rem;
+}
+
+.sideBarClose {
+  transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+  margin-left: 104px;
+}
+
+.top-top{
+  width: 100%;
+  height: 3em;
+  padding: 10px;
+  /* background-color: blue; */
+}
+
+.top-bottom{
+  width: 100%;
+  height: 5em;
+  padding: 10px;
+}
+
+.table_wraper{
+  margin-top: -15px;
+}

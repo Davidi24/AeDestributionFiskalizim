@@ -1,0 +1,321 @@
+@import url("https://cdn.syncfusion.com/ej2/material.css");
+
+/* grid c1 */
+.grid-c1 {
+  display: flex;
+  flex-direction: column;
+}
+.grid-c1-content {
+  background: linear-gradient(
+      114.07deg,
+      rgba(66, 59, 55, 0.6) 3.49%,
+      rgba(66, 59, 55, 0) 34.7%
+    ),
+    linear-gradient(138.58deg, rgba(59, 43, 30, 0.37) 43.56%, #fea767 112.68%);
+  flex: 1;
+  border-radius: 10px;
+  padding: 16px;
+}
+.grid-c1-content .lg-value {
+  margin-top: 8px;
+  margin-bottom: 16px;
+  color: #c7c4c6;
+}
+.grid-c1-content .expiry-text {
+  margin-bottom: 6px;
+}
+.grid-c1-content .card-wrapper {
+  display: flex;
+}
+.grid-c1-content .card-pin-hidden {
+  font-size: 32px;
+  margin-right: 8px;
+}
+.grid-c1-content span {
+  color: #8a8587;
+}
+.grid-c1 .card-logo-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.grid-c1 .card-logo {
+  display: flex;
+}
+.grid-c1 .logo-shape1,
+.grid-c1 .logo-shape2 {
+  width: 36px;
+  height: 36px;
+  border-radius: 100%;
+}
+.grid-c1 .logo-shape1 {
+  background-color: var(--clr-scarlet-v1);
+  margin-right: -15px;
+  z-index: 0;
+}
+.grid-c1 .logo-shape2 {
+  background-color: var(--clr-yellow);
+}
+
+@media screen and (max-width: 768px) {
+  .grid-c1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+}
+
+/* Add this CSS to style the calendar icon and position it */
+.date-picker-container {
+  position: relative;
+}
+
+.calendar-icon {
+  position: absolute;
+  left: 10px; /* Adjust the position of the icon */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%);
+}
+
+/* Style the input field as needed */
+.date-picker-input {
+  padding-left: 36px; /* Ensure input text doesn't overlap with the icon */
+}
+
+/* CSS */
+.cleari {
+  align-items: center;
+  appearance: none;
+  background-clip: padding-box;
+  background-color: initial;
+  background-image: none;
+  border-style: none;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  flex-direction: row;
+  flex-shrink: 0;
+  font-family: Eina01, sans-serif;
+  font-size: 12px; /* Adjusted font size */
+  font-weight: 600; /* Adjusted font weight */
+  justify-content: center;
+  line-height: 18px; /* Adjusted line height */
+  margin: 0;
+  min-height: 40px; /* Adjusted minimum height */
+  outline: none;
+  overflow: visible;
+  padding: 10px 16px; /* Adjusted padding */
+  pointer-events: auto;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  width: auto;
+  word-break: keep-all;
+  z-index: 0;
+}
+
+@media (min-width: 768px) {
+  .cleari {
+    padding: 10px 22px; /* Adjusted padding for larger screens */
+  }
+}
+
+.cleari:before,
+.cleari:after {
+  border-radius: 20px; /* Reduced border radius */
+}
+
+/* Remaining styles remain unchanged */
+
+.cleari:before {
+  background-color: rgba(249, 58, 19, 0.32);
+  content: "";
+  display: block;
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -2;
+}
+
+.cleari:after {
+  background-color: initial;
+  background-image: linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);
+  bottom: 4px;
+  content: "";
+  display: block;
+  left: 4px;
+  overflow: hidden;
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  transition: all 100ms ease-out;
+  z-index: -1;
+}
+
+.cleari:hover:not(:disabled):after {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  transition-timing-function: ease-in;
+}
+
+.cleari:active:not(:disabled) {
+  color: #ccc;
+}
+
+.cleari:active:not(:disabled):after {
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2)
+    ),
+    linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);
+  bottom: 4px;
+  left: 4px;
+  right: 4px;
+  top: 4px;
+}
+
+.cleari:disabled {
+  cursor: default;
+  opacity: 0.24;
+}
+
+/* CSS */
+.filteri {
+  align-items: center;
+  appearance: none;
+  background-clip: padding-box;
+  background-color: initial;
+  background-image: none;
+  border-style: none;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  flex-direction: row;
+  flex-shrink: 0;
+  font-family: Eina01, sans-serif;
+  font-size: 12px; /* Adjusted font size */
+  font-weight: 600; /* Adjusted font weight */
+  justify-content: center;
+  line-height: 18px; /* Adjusted line height */
+  margin: 0;
+  min-height: 40px; /* Adjusted minimum height */
+  outline: none;
+  overflow: visible;
+  padding: 10px 16px; /* Adjusted padding */
+  pointer-events: auto;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  width: auto;
+  word-break: keep-all;
+  z-index: 0;
+}
+
+@media (min-width: 768px) {
+  .filteri {
+    padding: 10px 22px; /* Adjusted padding for larger screens */
+  }
+}
+
+.filteri:before,
+.filteri:after {
+  border-radius: 20px; /* Reduced border radius */
+}
+
+/* Remaining styles remain unchanged */
+
+.filteri:before {
+  background-color: rgba(249, 58, 19, 0.32);
+  content: "";
+  display: block;
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -2;
+}
+
+.filteri:after {
+  background-color: initial;
+  background-image: linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);
+  bottom: 4px;
+  content: "";
+  display: block;
+  left: 4px;
+  overflow: hidden;
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  transition: all 100ms ease-out;
+  z-index: -1;
+}
+
+.filteri:hover:not(:disabled):after {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  transition-timing-function: ease-in;
+}
+
+.filteri:active:not(:disabled) {
+  color: #ccc;
+}
+
+.filteri:active:not(:disabled):after {
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2)
+    ),
+    linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);
+  bottom: 4px;
+  left: 4px;
+  right: 4px;
+  top: 4px;
+}
+
+.filteri:disabled {
+  cursor: default;
+  opacity: 0.24;
+}
+
+.startDate{
+ height: 25px;
+ background: var(--clr-primary);;
+ border: none;
+ color: wheat;
+}
+
+.startDate:focus-visible{
+border: none;
+}
+
+
+
+
+
+.startDate-Wraper{
+  background-color: wheat;
+  height: 27px;
+}
+

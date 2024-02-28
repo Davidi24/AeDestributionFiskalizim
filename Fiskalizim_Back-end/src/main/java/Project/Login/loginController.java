@@ -6,35 +6,37 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.*;
+
 @RestController
 @RequestMapping
 public class loginController {
-  private final   LoginService loginService ;
+    private final LoginService loginService;
+
     @Autowired
     public loginController(LoginService loginService) {
         this.loginService = loginService;
     }
 
     @GetMapping("/check-credentials")
-    public ResponseEntity<String> checkUserCredentials(
+    public ResponseEntity<Map<String, Object>> checkUserCredentials(
             @RequestParam String username,
             @RequestParam String password
     ) {
-        String validationMessage;
+        ArrayList<Object> validationMessage;
         try {
             validationMessage = loginService.validateUserCredentials(username, password);
         } catch (Exception e) {
-            return ResponseEntity.status(500).body(e.getMessage());
+            System.out.println(e);
+            return ResponseEntity.status(500).body(Collections.singletonMap("message", e.getMessage()));
         }
 
-        if (validationMessage.equals("Credentials are valid!")) {
-            return ResponseEntity.ok().body("{\"message\": \"Credentials are valid!\"}");
-        } else {
-            return ResponseEntity.status(401).body("{\"message\": \"" + validationMessage + "\"}");
-        }
+        Map<String, Object> response = new HashMap<>();
+        response.put("message", validationMessage.get(0));
+        response.put("container", validationMessage.get(1));
 
+        return ResponseEntity.ok().body(response);
     }
-
 
 
 }

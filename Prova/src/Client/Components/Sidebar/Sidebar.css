@@ -1,0 +1,106 @@
+.wrapper {
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  height: 35em;
+  color: black;
+  transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+  background-color: rgb(216, 212, 205);
+  height: 100%;
+}
+
+.wrapper-open {
+  width: 17rem;
+  font-size: 16px;
+  height: 37em;
+}
+.wrapper-close {
+  height: 60em;
+  width: 104px;
+  min-width: 60px;
+  font-size: 10px;
+}
+
+.arrow {
+  z-index: 1;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 2.2em;
+  transform: scale(0.8);
+}
+
+.sidebar-items {
+  /* margin-top: 80px; */
+  cursor: pointer;
+}
+.sidebar-items li {
+  display: flex;
+}
+
+.sidebar-items li p {
+  margin-left: 13px;
+  margin-top: 5px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+}
+
+.sidebar-items img {
+  width: 25px;
+}
+
+.listOfItems {
+  display: flex;
+  height: 50px;
+  align-items: center;
+  margin-bottom: 1rem;
+  margin-left: 15px;
+  padding-left: 15px;
+  margin-right: 35px;
+  border-radius: 0.8rem;
+}
+
+.itemSelected {
+  background-color: #2c5562;
+  color: wheat;
+}
+
+.itemSelected li img {
+  color: wheat;
+}
+
+.wrapper ul {
+  margin-top: 10px;
+}
+
+.icon1 {
+  font-weight: 100;
+  color: rgb(85, 84, 84);
+}
+.sidebar-logo div{
+  overflow: hidden;
+}
+
+.sidebar-logo img {
+  width: 70px;
+  margin-left: 15px;
+}
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.icon11 {
+  font-weight: 100;
+  color: wheat;
+}
+
+#vatNumber {
+  margin-left: 25px;
+}
+
+/* .whiteBackground{
+  color: wheat;
+} */
+
