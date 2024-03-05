@@ -12,8 +12,11 @@ import { registerLicense } from "@syncfusion/ej2-base";
 import Login from "./components/LogIn/Login.jsx";
 
 import { Faturat } from "./Client/Client.jsx";
+import { HomePage } from "./Client/Client.jsx";
 
 import Client from "./Client/Client.jsx";
+import Sidebar from "./Client/Components/Sidebar/Sidebar.jsx";
+import { Home } from "@mui/icons-material";
 // import Prova from "./prova.jsx";
 
 registerLicense(
@@ -27,6 +30,15 @@ const Root = () => {
   const [vatNumber, setVatNumber] = useState(null);
 
   const navigate = useNavigate();
+
+  const HomeMocks = () => {
+    return (
+      <>
+        <Sidebar setSidebarPosition={setSidebarPosition} />
+        <span>Homeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</span>
+      </>
+    );
+  };
 
   useEffect(() => {
     if (localStorage.getItem("isLoggedIn") != "true") {
@@ -78,12 +90,26 @@ const Root = () => {
       setIsLoggedIn(true);
     }
   }, []);
-  const [sidebarPosition, setSidebarPosition] = useState(true);
+
+  const [sidebarPosition, setSidebarPosition] = useState(0);
+
   return (
     <>
       <Routes>
         <Route path="/admin" element={<App />} />
         <Route path="/client" element={<Client />} />
+        <Route
+          path="/client/home"
+          element={
+            <HomePage
+              sidebarPosition={sidebarPosition}
+              setSidebarPosition={setSidebarPosition}
+            />
+          }
+        />
+        <Route path="/client/faturattt" element={<HomeMocks />} />
+        <Route path="/client/prova" element={<HomeMocks />} />
+        <Route path="/client/settings" element={<HomeMocks />} />
         <Route
           path="/login"
           element={<Login handleLogIn={handleLogIn} isError={isError} />}

@@ -13,10 +13,10 @@
 .wrapper-open {
   width: 17rem;
   font-size: 16px;
-  height: 37em;
+  height: 100vh;
 }
 .wrapper-close {
-  height: 60em;
+  height: 100vh;
   width: 104px;
   min-width: 60px;
   font-size: 10px;
