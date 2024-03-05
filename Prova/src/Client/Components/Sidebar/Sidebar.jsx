@@ -17,7 +17,9 @@ import {
 const Sidebar = ({ setSidebarPosition }) => {
   const items = ["Home", "Faturat e mia", "Prova", "Settings"];
   const [isSidebarOpen, setSidebar] = useState(true);
-  const [selectedId, setSelectedId] = useState(0);
+  const [selectedId, setSelectedId] = useState(
+    parseInt(localStorage.getItem("selectedId")) || 0
+  );
   const [firstIconClass, setFirstIconClass] = useState("icon1");
   const navigate = useNavigate();
 
@@ -51,6 +53,9 @@ const Sidebar = ({ setSidebarPosition }) => {
   };
 
   const changeSelecteditem = (index) => {
+    setSelectedId(index);
+    localStorage.setItem("selectedId", index.toString());
+    console.log("okoooooo")
     switch (index) {
       case 0:
         navigate("/client/home");
@@ -68,7 +73,6 @@ const Sidebar = ({ setSidebarPosition }) => {
         navigate("/client/home");
         break;
     }
-    setSelectedId(index);
   };
 
   return (
