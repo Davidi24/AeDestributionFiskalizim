@@ -131,7 +131,7 @@ const Root = () => {
 createRoot(document.getElementById("root")).render(
   <Router>
     <React.StrictMode>
-      <Prova />
+      <Root />
     </React.StrictMode>
   </Router>
 );
