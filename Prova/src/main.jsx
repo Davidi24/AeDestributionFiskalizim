@@ -17,7 +17,7 @@ import { HomePage } from "./Client/Client.jsx";
 import Client from "./Client/Client.jsx";
 import Sidebar from "./Client/Components/Sidebar/Sidebar.jsx";
 import { Home } from "@mui/icons-material";
-// import Prova from "./prova.jsx";
+import Prova from "./prova.jsx";
 
 registerLicense(
   "Ngo9BigBOggjHTQxAR8/V1NAaF5cWWBCfEx3WmFZfVpgc19DYFZRRmY/P1ZhSXxXdkRjW35XdXJXRWhVV0I="
@@ -131,7 +131,7 @@ const Root = () => {
 createRoot(document.getElementById("root")).render(
   <Router>
     <React.StrictMode>
-      <Root />
+      <Prova />
     </React.StrictMode>
   </Router>
 );
