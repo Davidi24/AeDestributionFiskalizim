@@ -1,0 +1,359 @@
+.table-wrapper {
+  overflow-y: scroll !important;
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 18px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--clr-pumpkin);
+    border-radius: 18px;
+  }
+  overflow-x: auto;
+  &::-webkit-scrollbar {
+    height: 4px;
+  }
+}
+
+/* @import 'antd/dist/antd.css'; */
+
+.ant-table-wrapper {
+  background-color: transparent !important;
+}
+
+.ant-table {
+  background-color: transparent !important;
+  /* border: solid 2px wheat; */
+  /* overflow-x: scroll; */
+  border-radius: 0 20px 0 0;
+  width: 200%;
+}
+
+.ant-table {
+  border-collapse: collapse; /* Set the border properties */
+}
+
+:where(.css-dev-only-do-not-override-i46qwz).ant-table-wrapper
+  .ant-table-tbody
+  > tr.ant-table-placeholder:hover
+  > th,
+:where(.css-dev-only-do-not-override-i46qwz).ant-table-wrapper
+  .ant-table-tbody
+  > tr.ant-table-placeholder:hover
+  > td,
+:where(.css-dev-only-do-not-override-i46qwz).ant-table-wrapper
+  .ant-table-tbody
+  > tr.ant-table-placeholder {
+  background: transparent;
+}
+
+:where(.css-dev-only-do-not-override-i46qwz).ant-table-wrapper
+  .ant-table-thead
+  > tr
+  > th,
+:where(.css-dev-only-do-not-override-i46qwz).ant-table-wrapper
+  .ant-table-thead
+  > tr
+  > td {
+  /* background-color: transparent; */
+  background-color: #d45316;
+}
+
+:where(.css-dev-only-do-not-override-i46qwz).ant-table-wrapper
+  .ant-table-thead
+  > tr
+  > th,
+:where(.css-dev-only-do-not-override-i46qwz).ant-table-wrapper
+  .ant-table-thead
+  > tr
+  > td {
+  color: aliceblue;
+}
+
+:where(.css-dev-only-do-not-override-i46qwz)[class^="ant-table"]
+  [class^="ant-table"],
+:where(.css-dev-only-do-not-override-i46qwz)[class*=" ant-table"]
+  [class^="ant-table"],
+:where(.css-dev-only-do-not-override-i46qwz)[class^="ant-table"]
+  [class*=" ant-table"],
+:where(.css-dev-only-do-not-override-i46qwz)[class*=" ant-table"]
+  [class*=" ant-table"] {
+  line-height: 1px;
+  white-space: nowrap;
+}
+
+/* .grid-c4{
+  overflow-x: scroll;
+} */
+
+/* :where(.css-dev-only-do-not-override-i46qwz).ant-table-wrapper .ant-table-tbody >tr >th, :where(.css-dev-only-do-not-override-i46qwz).ant-table-wrapper .ant-table-tbody >tr >td {
+  max-width: 183px;
+  overflow: hidden;
+} */
+
+@media screen and (max-width: 1400px) {
+  body {
+    font-size: 14px !important;
+    min-width: 120px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .grid-common {
+    max-width: 1100px;
+    padding: 16px;
+  }
+}
+.table-wrapper {
+  max-width: 100%;
+  border: solid 1px wheat;
+  border-radius: 0 0 0 0;
+}
+:where(.css-dev-only-do-not-override-i46qwz).ant-table-wrapper
+  .ant-table-container
+  table
+  > thead
+  > tr:first-child
+  > *:first-child {
+  border-start-start-radius: 0;
+}
+
+:where(.css-dev-only-do-not-override-i46qwz)[class^="ant-table"]
+  [class^="ant-table"],
+:where(.css-dev-only-do-not-override-i46qwz)[class*=" ant-table"]
+  [class^="ant-table"],
+:where(.css-dev-only-do-not-override-i46qwz)[class^="ant-table"]
+  [class*=" ant-table"],
+:where(.css-dev-only-do-not-override-i46qwz)[class*=" ant-table"]
+  [class*=" ant-table"] {
+  max-width: 50%;
+}
+
+:where(.css-dev-only-do-not-override-i46qwz).ant-table-wrapper
+  .ant-table-container
+  table
+  > thead
+  > tr:first-child
+  > *:last-child {
+  border-start-end-radius: 0px;
+}
+
+.css-dev-only-do-not-override-i46qwz .ant-table-wrapper tfoot > tr > th:hover {
+  max-width: 110px;
+  overflow-x: hidden;
+  background: rebeccapurple;
+}
+
+:where(.css-dev-only-do-not-override-i46qwz).ant-table-wrapper
+  .ant-table-tbody
+  > tr
+  > td,
+:where(.css-dev-only-do-not-override-i46qwz).ant-table-wrapper tfoot > tr > th,
+:where(.css-dev-only-do-not-override-i46qwz).ant-table-wrapper tfoot > tr > td {
+  max-width: 110px;
+  overflow-x: hidden;
+}
+
+:where(.css-dev-only-do-not-override-i46qwz).ant-table-wrapper
+  .ant-table-pagination.ant-pagination {
+  margin: 16px 0;
+  margin-left: 48%;
+}
+
+.ant-table-cell:hover {
+  overflow-x: scroll !important;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 18px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--clr-pumpkin);
+    border-radius: 18px;
+  }
+  overflow-x: auto;
+  &::-webkit-scrollbar {
+    height: 4px;
+  }
+}
+
+.ant-table-row {
+  color: rgb(0, 0, 0);
+}
+
+.ant-select-show-search:where(
+    .css-dev-only-do-not-override-i46qwz
+  ).ant-select:not(.ant-select-customize-input)
+  .ant-select-selector {
+  display: none;
+}
+
+.exportDatat {
+  align-items: center;
+  appearance: none;
+  background-clip: padding-box;
+  background-color: initial;
+  background-image: none;
+  border-style: none;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  flex-direction: row;
+  flex-shrink: 0;
+  font-family: Eina01, sans-serif;
+  font-size: 12px; /* Adjusted font size */
+  font-weight: 600; /* Adjusted font weight */
+  justify-content: center;
+  line-height: 18px; /* Adjusted line height */
+  margin: 0;
+  min-height: 40px; /* Adjusted minimum height */
+  outline: none;
+  overflow: visible;
+  padding: 10px 16px; /* Adjusted padding */
+  pointer-events: auto;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  width: auto;
+  word-break: keep-all;
+  z-index: 0;
+}
+
+@media (min-width: 768px) {
+  .exportDatat {
+    padding: 10px 22px; /* Adjusted padding for larger screens */
+  }
+}
+
+.exportDatat:before,
+.exportDatat:after {
+  border-radius: 20px; /* Reduced border radius */
+}
+
+/* Remaining styles remain unchanged */
+
+.exportDatat:before {
+  background-color: rgba(249, 58, 19, 0.32);
+  content: "";
+  display: block;
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -2;
+}
+
+.exportDatat:after {
+  background-color: initial;
+  background-image: linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);
+  bottom: 4px;
+  content: "";
+  display: block;
+  left: 4px;
+  overflow: hidden;
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  transition: all 100ms ease-out;
+  z-index: -1;
+}
+
+.exportDatat:hover:not(:disabled):after {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  transition-timing-function: ease-in;
+}
+
+.exportDatat:active:not(:disabled) {
+  color: #ccc;
+}
+
+.exportDatat:active:not(:disabled):after {
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2)
+    ),
+    linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);
+  bottom: 4px;
+  left: 4px;
+  right: 4px;
+  top: 4px;
+}
+
+.exportDatat:disabled {
+  cursor: default;
+  opacity: 0.24;
+}
+
+:where(.css-dev-only-do-not-override-i46qwz)
+  .ant-table-wrapper
+  .ant-table-tbody
+  > tr:hover
+  > td,
+:where(.css-dev-only-do-not-override-i46qwz)
+  .ant-table-wrapper
+  .ant-table-tbody
+  > tr:hover
+  > th,
+:where(.css-dev-only-do-not-override-i46qwz)
+  .ant-table-wrapper
+  .ant-table-tbody
+  > tr:hover {
+  background-color: red !important;
+  color: #333 !important;
+  transition: none !important;
+}
+
+/* :where(.css-dev-only-do-not-override-i46qwz)
+  .ant-table-wrapper
+  .ant-table-tbody
+  > tr:not(:hover)
+  > td,
+:where(.css-dev-only-do-not-override-i46qwz)
+  .ant-table-wrapper
+  .ant-table-tbody
+  > tr:not(:hover)
+  > th,
+:where(.css-dev-only-do-not-override-i46qwz)
+  .ant-table-wrapper
+  .ant-table-tbody
+  > tr:hover {
+  background-color: black !important;
+} */
+
+
+
+
+/* Apply background color to table rows on hover */
+/* Apply background color to table rows and cells on hover */
+/* Apply background color to table rows and cells on hover */
+:where(.css-dev-only-do-not-override-i46qwz) .table-wrapper .ant-table-row:hover,
+:where(.css-dev-only-do-not-override-i46qwz) .table-wrapper .ant-table-row:hover td {
+  background-color: orange !important;
+}
+
+
+
+
+
+

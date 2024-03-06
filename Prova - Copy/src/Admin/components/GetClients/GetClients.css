@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,300&display=swap');
+
+.klienta{
+    display: flex;
+    justify-content: center;
+    max-width: 70%;
+    overflow-x: auto;
+    
+    &::-webkit-scrollbar {
+        width: 4px;
+      }
+    
+      &::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        border-radius: 18px;
+      }
+    
+      &::-webkit-scrollbar-thumb {
+        background-color: var(--clr-pumpkin);
+        border-radius: 18px;
+      }
+      overflow-x: auto;
+      &::-webkit-scrollbar {
+        height: 4px;
+      }
+  
+}
+
+.nav-item {
+    cursor: pointer !important;
+}
+
+
+
+.klienta ul li{
+    color: rgba(214, 212, 212, 0.815);
+    padding-right: 5px;
+    padding-left: 5px;
+    width: 140%;
+    font-family: Montserrat;
+    font-size: small;
+}
+
+.klienta ul li:hover {
+    border-radius: 9%;
+    background-color: rgb(247, 116, 9);
+    padding-right: 6px;
+    padding-left: 6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
